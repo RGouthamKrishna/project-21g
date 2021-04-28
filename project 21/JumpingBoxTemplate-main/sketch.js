@@ -29,7 +29,7 @@ ball = createSprite(10,50,20,20);
 
 function draw() {
     background(rgb(169,169,169));
-    createEdgeSprites();
+    edges = createEdgeSprites();
 
     ground1.shapeColor = "green";
     ground2.shapeColor = "yellow";
@@ -43,6 +43,8 @@ function draw() {
     ball.bounceOff(ground4);
     ball.bounceOff(edges);
 
+    
+    
     
     
 
@@ -61,4 +63,10 @@ function draw() {
 
 
     //add condition to check if box touching surface and make it box
+    if(ball.isTouching(ground3)&& box.bounceOff(ground3)){
+        blue();
+    }
+}
+function blue(){
+    ball.shapeColor = "blue";
 }
